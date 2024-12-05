@@ -1,0 +1,74 @@
+[
+    {
+        "goods_name": "Backpack",
+        "goods_price": 250000,
+        "seller_region": "Jawa Tengah",
+        "goods_rating": 4.6
+    },
+    {
+        "goods_name": "Ikat Pinggang",
+        "goods_price": 50000,
+        "seller_region": "Jakarta Utara",
+        "goods_rating": 4.5
+    },
+    {
+        "goods_name": "Kabel Roll",
+        "goods_price": 180000,
+        "seller_region": "Jawa Tengah",
+        "goods_rating": 4.8
+    },
+    {
+        "goods_name": "Kabel USB Type-C",
+        "goods_price": 45000,
+        "seller_region": "Jakarta Selatan",
+        "goods_rating": 4.7
+    },
+    {
+        "goods_name": "Kaos Kaki",
+        "goods_price": 20000,
+        "seller_region": "Jawa Barat",
+        "goods_rating": 4.5
+    },
+    {
+        "goods_name": "Keyboard",
+        "goods_price": 1700000,
+        "seller_region": "Jakarta Timur",
+        "goods_rating": 4.7
+    },
+    {
+        "goods_name": "Laptop Stand",
+        "goods_price": 150000,
+        "seller_region": "Kalimantan Timur",
+        "goods_rating": 4.7
+    },
+    {
+        "goods_name": "Mouse",
+        "goods_price": 170000,
+        "seller_region": "Bangka Belitung",
+        "goods_rating": 4.8
+    },
+    {
+        "goods_name": "Payung",
+        "goods_price": 85000,
+        "seller_region": "Jawa Timur",
+        "goods_rating": 4.9
+    },
+    {
+        "goods_name": "Pencil Case",
+        "goods_price": 47000,
+        "seller_region": "jawa Tengah",
+        "goods_rating": 4.7
+    },
+    {
+        "goods_name": "Portable Fan",
+        "goods_price": 75000,
+        "seller_region": "Jakarta Selatan",
+        "goods_rating": 4.8
+    },
+    {
+        "goods_name": "Tumblr",
+        "goods_price": 125000,
+        "seller_region": "Jawa Barat",
+        "goods_rating": 4.7
+    }
+]
