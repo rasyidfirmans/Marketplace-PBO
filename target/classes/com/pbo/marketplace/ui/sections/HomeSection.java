@@ -39,12 +39,13 @@ public class HomeSection extends javax.swing.JPanel {
         setPreferredSize(new java.awt.Dimension(1440, 1360));
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 30));
         for (Goods goods : goodsList) {
+            String goodsPicturePath = goods.getGoodsPicturePath();
             String goodsName = goods.getGoodsName();
             String goodsPrice = "Rp " + goods.getGoodsPrice();
             String sellerRegion = goods.getSellerRegion();
             String goodsRating = String.valueOf(goods.getGoodsrating()) + "/5.0";
 
-            goodsCard = new GoodsCard(goodsName, goodsPrice, sellerRegion, goodsRating);
+            goodsCard = new GoodsCard(goodsPicturePath, goodsName, goodsPrice, sellerRegion, goodsRating);
             add(goodsCard);
         }
     }// </editor-fold>//GEN-END:initComponents

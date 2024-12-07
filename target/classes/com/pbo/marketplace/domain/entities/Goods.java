@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 import com.pbo.marketplace.domain.interfaces.GoodsInterface;
 
 public class Goods implements GoodsInterface {
+    @SerializedName("goods_picture")
+    private String goodsPicturePath;
     @SerializedName("goods_name")
     private String goodsName;
     @SerializedName("goods_price")
@@ -18,6 +20,11 @@ public class Goods implements GoodsInterface {
         this.goodsPrice = goodsPrice;
         this.sellerRegion = sellerRegion;
         this.goodsrating = goodsrating;
+    }
+
+    @Override
+    public String getGoodsPicturePath() {
+        return goodsPicturePath;
     }
 
     @Override
