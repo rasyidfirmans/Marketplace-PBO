@@ -93,7 +93,7 @@ public class Marketplace extends javax.swing.JFrame {
 
         getContentPane().add(panelNavbar);
 
-        panelContainer.setPreferredSize(new java.awt.Dimension(1440, 1360));
+        panelContainer.setPreferredSize(new java.awt.Dimension(1440, 1645));
         panelContainer.setLayout(new java.awt.CardLayout());
         panelContainer.add(homeSection1, "card2");
 
