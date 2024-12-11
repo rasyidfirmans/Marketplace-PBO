@@ -8,7 +8,7 @@ public class User implements UserInterface {
     private String name;
     private long balance;
 
-    User(String email, String password, String name, long balance) {
+    public User(String email, String password, String name, long balance) {
         this.email = email;
         this.password = password;
         this.name = name;
