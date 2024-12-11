@@ -145,7 +145,6 @@ public class Marketplace extends javax.swing.JFrame {
     }// GEN-LAST:event_buttonMyAccountActionPerformed
 
     private void buttonMyCartActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonMyCartActionPerformed
-        System.out.println("My Cart");
         int height = new CartSection().getPreferredSize().height;
         panelContainer.removeAll();
         panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
@@ -155,7 +154,6 @@ public class Marketplace extends javax.swing.JFrame {
     }// GEN-LAST:event_buttonMyCartActionPerformed
 
     private void buttonShopActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonShopActionPerformed
-        System.out.println("Shop");
         int height = new HomeSection().getPreferredSize().height;
         panelContainer.removeAll();
         panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
