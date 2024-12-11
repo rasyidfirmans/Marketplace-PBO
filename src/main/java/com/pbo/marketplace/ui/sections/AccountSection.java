@@ -4,6 +4,11 @@
  */
 package com.pbo.marketplace.ui.sections;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import com.pbo.marketplace.domain.entities.User;
+import com.pbo.marketplace.retrieve.DatabaseRetrieve;
 import com.pbo.marketplace.ui.components.AccountCard;
 
 /**
@@ -28,15 +33,26 @@ public class AccountSection extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
+        List<User> userList = new DatabaseRetrieve().JSONParser(User.class,
+                "src/main/java/com/pbo/marketplace/database/users.json");
 
-        accountCard2 = new com.pbo.marketplace.ui.components.AccountCard();
+        if (userList == null) {
+            userList = new ArrayList<>();
+        }
 
         setPreferredSize(new java.awt.Dimension(1440, 700));
         setLayout(new java.awt.GridBagLayout());
-        add(new AccountCard(), new java.awt.GridBagConstraints());
+
+        for (User user : userList) {
+            if (user.getEmail().equals("rasyidnf.id@gmail.com")) {
+                add(new AccountCard(user.getName(), user.getEmail(), String.valueOf(user.getBalance())),
+                        new java.awt.GridBagConstraints());
+
+            }
+        }
+
     }// </editor-fold>//GEN-END:initComponents
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private com.pbo.marketplace.ui.components.AccountCard accountCard2;
     // End of variables declaration//GEN-END:variables
 }
