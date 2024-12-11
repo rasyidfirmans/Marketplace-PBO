@@ -36,7 +36,7 @@ public class HomeSection extends javax.swing.JPanel {
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setPreferredSize(new java.awt.Dimension(1440, 1360));
+        setPreferredSize(new java.awt.Dimension(1440, 1650));
         setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.CENTER, 30, 75));
         for (Goods goods : goodsList) {
             String goodsPicturePath = goods.getGoodsPicturePath();
