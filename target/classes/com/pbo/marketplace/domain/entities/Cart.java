@@ -5,7 +5,6 @@ import java.util.List;
 import com.pbo.marketplace.domain.interfaces.CartInterface;
 
 public class Cart implements CartInterface {
-    private String name;
     private String email;
     private long subtotal;
     private long tax;
@@ -13,20 +12,13 @@ public class Cart implements CartInterface {
     private List<Integer> quantity;
     private List<Goods> goodsList;
 
-    public Cart(String name, String email, long subtotal, long tax, long total, List<Integer> quantity,
-            List<Goods> goodsList) {
-        this.name = name;
+    public Cart(String email, long subtotal, long tax, long total, List<Integer> quantity, List<Goods> goodsList) {
         this.email = email;
         this.subtotal = subtotal;
         this.tax = tax;
         this.total = total;
         this.quantity = quantity;
         this.goodsList = goodsList;
-    }
-
-    @Override
-    public String getName() {
-        return name;
     }
 
     @Override
