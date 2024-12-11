@@ -5,7 +5,6 @@ import java.util.List;
 import com.pbo.marketplace.domain.entities.Goods;
 
 public interface CartInterface {
-    public String getName();
 
     public String getEmail();
 
