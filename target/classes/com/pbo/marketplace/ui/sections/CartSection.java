@@ -8,9 +8,11 @@ import java.util.List;
 
 import com.pbo.marketplace.domain.entities.Cart;
 import com.pbo.marketplace.domain.entities.Goods;
+import com.pbo.marketplace.domain.entities.User;
 import com.pbo.marketplace.retrieve.DatabaseRetrieve;
 import com.pbo.marketplace.ui.components.GoodsCheckout;
 import com.pbo.marketplace.ui.components.GoodsItem;
+import com.pbo.marketplace.writer.DatabaseWriter;
 
 /**
  *
@@ -329,6 +331,12 @@ public class CartSection extends javax.swing.JPanel {
                 checkoutButton.setForeground(new java.awt.Color(0, 0, 0));
                 checkoutButton.setText("Checkout Now");
                 checkoutButton.setPreferredSize(new java.awt.Dimension(345, 35));
+                checkoutButton.addActionListener(new java.awt.event.ActionListener() {
+                        public void actionPerformed(java.awt.event.ActionEvent evt) {
+                                checkoutNowActionPerformed(evt);
+                        }
+                });
+
                 gridBagConstraints = new java.awt.GridBagConstraints();
                 gridBagConstraints.ipady = 10;
                 panelButtonWrapper.add(checkoutButton, gridBagConstraints);
@@ -339,6 +347,42 @@ public class CartSection extends javax.swing.JPanel {
 
                 add(panelCartMain);
         }// </editor-fold>//GEN-END:initComponents
+
+        private void checkoutNowActionPerformed(java.awt.event.ActionEvent evt) {
+                List<User> userList = new DatabaseRetrieve().JSONParser(User.class,
+                                "src/main/java/com/pbo/marketplace/database/users.json");
+                List<Cart> cartList = new DatabaseRetrieve().JSONParser(Cart.class,
+                                "src/main/java/com/pbo/marketplace/database/carts.json");
+
+                for (User user : userList) {
+                        if (user.getEmail().equals("rasyidnf.id@gmail.com")) {
+                                for (Cart cart : cartList) {
+                                        if (cart.getEmail().equals(user.getEmail())) {
+                                                if (user.getBalance() >= cart.getTotal() && cart.getTotal() != 0) {
+                                                        userList.set(userList.indexOf(user), new User(user.getEmail(),
+                                                                        user.getPassword(), user.getName(),
+                                                                        user.getBalance() - cart.getTotal()));
+
+                                                        DatabaseWriter databaseWriter = new DatabaseWriter(userList,
+                                                                        "src/main/java/com/pbo/marketplace/database/users.json");
+                                                        javax.swing.JOptionPane.showMessageDialog(null,
+                                                                        "Checkout is successful");
+                                                } else if (cart.getTotal() == 0) {
+                                                        javax.swing.JOptionPane.showMessageDialog(null,
+                                                                        "You're cart is empty! Please add some goods to your cart first.");
+                                                } else {
+                                                        javax.swing.JOptionPane.showMessageDialog(null,
+                                                                        "You don't have enough money. Please top up your balance first.");
+                                                }
+
+                                                break;
+                                        }
+                                }
+
+                                break;
+                        }
+                }
+        }
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
         private javax.swing.JButton checkoutButton;
