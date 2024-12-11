@@ -1,12 +1,11 @@
 com/pbo/marketplace/Marketplace$1.class
-com/pbo/marketplace/domain/interfaces/GoodsInterface.class
-com/pbo/marketplace/domain/entities/Goods.class
-com/pbo/marketplace/ui/sections/HomeSection.class
 com/pbo/marketplace/ui/components/GoodsCard$1.class
-com/pbo/marketplace/retrieve/TryToRetrieve.class
 com/pbo/marketplace/Marketplace$2.class
 com/pbo/marketplace/domain/interfaces/UserInterface.class
 com/pbo/marketplace/retrieve/DatabaseRetrieve.class
-com/pbo/marketplace/domain/entities/User.class
 com/pbo/marketplace/Marketplace.class
+com/pbo/marketplace/domain/interfaces/GoodsInterface.class
+com/pbo/marketplace/domain/entities/Goods.class
+com/pbo/marketplace/ui/sections/HomeSection.class
+com/pbo/marketplace/domain/entities/User.class
 com/pbo/marketplace/ui/components/GoodsCard.class
