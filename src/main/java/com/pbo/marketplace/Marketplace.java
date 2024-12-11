@@ -5,7 +5,9 @@
 package com.pbo.marketplace;
 
 import com.formdev.flatlaf.themes.FlatMacDarkLaf;
+import com.pbo.marketplace.ui.sections.AccountSection;
 import com.pbo.marketplace.ui.sections.CartSection;
+import com.pbo.marketplace.ui.sections.HomeSection;
 
 import javax.swing.UnsupportedLookAndFeelException;
 
@@ -14,13 +16,16 @@ import javax.swing.UnsupportedLookAndFeelException;
  * @author rasyid-firmansyah
  */
 public class Marketplace extends javax.swing.JFrame {
-
     /**
      * Creates new form Marketplace
      */
     public Marketplace() {
         initComponents();
     }
+
+    // public Marketplace(Void v) {
+    // // Null constructor
+    // }
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -33,16 +38,18 @@ public class Marketplace extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
     // <editor-fold defaultstate="collapsed" desc="Generated
+    // <editor-fold defaultstate="collapsed" desc="Generated
     // Code">//GEN-BEGIN:initComponents
     private void initComponents() {
         java.awt.GridBagConstraints gridBagConstraints;
 
         panelNavbar = new javax.swing.JPanel();
+        panelProgramTitle = new javax.swing.JPanel();
+        programTitle = new javax.swing.JLabel();
         panelButtonNav = new javax.swing.JPanel();
         buttonMyAccount = new javax.swing.JButton();
         buttonMyCart = new javax.swing.JButton();
-        panelProgramTitle = new javax.swing.JPanel();
-        programTitle = new javax.swing.JLabel();
+        buttonShop = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         panelContainer = new javax.swing.JPanel();
         homeSection1 = new com.pbo.marketplace.ui.sections.HomeSection();
@@ -52,55 +59,76 @@ public class Marketplace extends javax.swing.JFrame {
 
         panelNavbar.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(50, 50, 50), 1, true));
         panelNavbar.setPreferredSize(new java.awt.Dimension(1440, 80));
-        panelNavbar.setLayout(new java.awt.BorderLayout());
+        panelNavbar.setLayout(new java.awt.GridBagLayout());
 
-        java.awt.GridBagLayout panelButtonNavLayout = new java.awt.GridBagLayout();
-        panelButtonNavLayout.columnWidths = new int[] { 125 };
-        panelButtonNavLayout.columnWeights = new double[] { 30.0 };
-        panelButtonNav.setLayout(panelButtonNavLayout);
+        panelProgramTitle.setLayout(new java.awt.BorderLayout(10, 0));
+
+        programTitle.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
+        programTitle.setText("Marketplace");
+        programTitle.setPreferredSize(new java.awt.Dimension(148, 28));
+        panelProgramTitle.add(programTitle, java.awt.BorderLayout.WEST);
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 0, 0, 500);
+        panelNavbar.add(panelProgramTitle, gridBagConstraints);
+
+        panelButtonNav.setLayout(new java.awt.GridBagLayout());
 
         buttonMyAccount.setText("My Account");
+        buttonMyAccount.setPreferredSize(new java.awt.Dimension(30, 60));
         buttonMyAccount.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMyAccountActionPerformed(evt);
             }
         });
         gridBagConstraints = new java.awt.GridBagConstraints();
-        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridx = 2;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 7;
         gridBagConstraints.ipady = 7;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
         panelButtonNav.add(buttonMyAccount, gridBagConstraints);
 
         buttonMyCart.setText("My Cart");
+        buttonMyCart.setPreferredSize(new java.awt.Dimension(30, 60));
         buttonMyCart.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 buttonMyCartActionPerformed(evt);
             }
         });
+
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.gridx = 1;
+        gridBagConstraints.gridy = 0;
+        gridBagConstraints.ipadx = 7;
+        gridBagConstraints.ipady = 7;
+        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
+        panelButtonNav.add(buttonMyCart, gridBagConstraints);
+
+        buttonShop.setText("Shop");
+        buttonShop.setPreferredSize(new java.awt.Dimension(30, 60));
+        buttonShop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                buttonShopActionPerformed(evt);
+            }
+        });
+
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
         gridBagConstraints.ipadx = 7;
         gridBagConstraints.ipady = 7;
-        gridBagConstraints.anchor = java.awt.GridBagConstraints.LINE_START;
-        panelButtonNav.add(buttonMyCart, gridBagConstraints);
+        gridBagConstraints.insets = new java.awt.Insets(0, 5, 0, 5);
+        panelButtonNav.add(buttonShop, gridBagConstraints);
 
-        panelNavbar.add(panelButtonNav, java.awt.BorderLayout.EAST);
-
-        panelProgramTitle.setLayout(new java.awt.BorderLayout(10, 0));
-
-        programTitle.setFont(new java.awt.Font("Liberation Sans", 1, 24)); // NOI18N
-        programTitle.setText("Marketplace");
-        panelProgramTitle.add(programTitle, java.awt.BorderLayout.WEST);
-
-        panelNavbar.add(panelProgramTitle, java.awt.BorderLayout.WEST);
+        gridBagConstraints = new java.awt.GridBagConstraints();
+        gridBagConstraints.insets = new java.awt.Insets(0, 500, 0, 0);
+        panelNavbar.add(panelButtonNav, gridBagConstraints);
 
         getContentPane().add(panelNavbar);
 
-        int height = homeSection1.getPreferredSize().height;
-
-        panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
+        panelContainer.setPreferredSize(new java.awt.Dimension(1440, 1360));
         panelContainer.setLayout(new java.awt.CardLayout());
         panelContainer.add(homeSection1, "card2");
 
@@ -112,10 +140,16 @@ public class Marketplace extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void buttonMyAccountActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonMyAccountActionPerformed
-        // TODO add your handling code here:
+        int height = new AccountSection().getPreferredSize().height;
+        panelContainer.removeAll();
+        panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
+        panelContainer.add(new AccountSection());
+        panelContainer.revalidate();
+        panelContainer.repaint();
     }// GEN-LAST:event_buttonMyAccountActionPerformed
 
     private void buttonMyCartActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonMyCartActionPerformed
+        System.out.println("My Cart");
         int height = new CartSection().getPreferredSize().height;
         panelContainer.removeAll();
         panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
@@ -123,6 +157,16 @@ public class Marketplace extends javax.swing.JFrame {
         panelContainer.revalidate();
         panelContainer.repaint();
     }// GEN-LAST:event_buttonMyCartActionPerformed
+
+    private void buttonShopActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_buttonShopActionPerformed
+        System.out.println("Shop");
+        int height = new HomeSection().getPreferredSize().height;
+        panelContainer.removeAll();
+        panelContainer.setPreferredSize(new java.awt.Dimension(1440, height));
+        panelContainer.add(new HomeSection());
+        panelContainer.revalidate();
+        panelContainer.repaint();
+    }// GEN-LAST:event_buttonShopActionPerformed
 
     /**
      * @param args the command line arguments
@@ -153,9 +197,18 @@ public class Marketplace extends javax.swing.JFrame {
         });
     }
 
+    public void setPanelContainer(javax.swing.JPanel panelContainer) {
+        this.panelContainer = panelContainer;
+    }
+
+    public javax.swing.JPanel getPanelContainer() {
+        return this.panelContainer;
+    }
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton buttonMyAccount;
     private javax.swing.JButton buttonMyCart;
+    private javax.swing.JButton buttonShop;
     private com.pbo.marketplace.ui.sections.HomeSection homeSection1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JPanel panelButtonNav;
