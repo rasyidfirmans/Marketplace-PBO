@@ -4,6 +4,12 @@
  */
 package com.pbo.marketplace.ui.components;
 
+import java.util.List;
+
+import com.pbo.marketplace.domain.entities.User;
+import com.pbo.marketplace.retrieve.DatabaseRetrieve;
+import com.pbo.marketplace.writer.DatabaseWriter;
+
 /**
  *
  * @author DELL
@@ -13,8 +19,12 @@ public class AccountCard extends javax.swing.JPanel {
     /**
      * Creates new form AccountSection
      */
-    public AccountCard() {
+    public AccountCard(String name, String email, String balance) {
         initComponents();
+
+        this.Name.setText(name);
+        this.Email.setText(email);
+        this.Balance.setText("Rp " + balance);
     }
 
     /**
@@ -127,6 +137,39 @@ public class AccountCard extends javax.swing.JPanel {
     }// GEN-LAST:event_GoToShopActionPerformed
 
     private void TopUpActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_TopUpActionPerformed
+        String input = javax.swing.JOptionPane.showInputDialog(this, "Enter top-up amount:", "Top Up",
+                javax.swing.JOptionPane.PLAIN_MESSAGE);
+
+        int topUpAmount = 0;
+        if (input != null && !input.isEmpty()) {
+            try {
+                topUpAmount = Integer.parseInt(input);
+                // Handle the top-up logic here, e.g., update the balance
+                javax.swing.JOptionPane.showMessageDialog(this, "Top-up successful: Rp " + topUpAmount, "Success",
+                        javax.swing.JOptionPane.INFORMATION_MESSAGE);
+            } catch (NumberFormatException e) {
+                javax.swing.JOptionPane.showMessageDialog(this, "Invalid amount entered. Please enter a valid number.",
+                        "Error", javax.swing.JOptionPane.ERROR_MESSAGE);
+            }
+        }
+
+        List<User> userList = new DatabaseRetrieve().JSONParser(User.class,
+                "src/main/java/com/pbo/marketplace/database/users.json");
+
+        for (User user : userList) {
+            if (user.getEmail().equals(this.Email.getText())) {
+
+                userList.set(userList.indexOf(user),
+                        new User(user.getEmail(), user.getPassword(), user.getName(), user.getBalance() + topUpAmount));
+
+                this.Balance.setText("Rp " + (user.getBalance() + topUpAmount));
+
+                break;
+            }
+        }
+
+        DatabaseWriter databaseWriter = new DatabaseWriter(userList,
+                "src/main/java/com/pbo/marketplace/database/users.json");
 
     }// GEN-LAST:event_TopUpActionPerformed
 
