@@ -23,10 +23,6 @@ public class Marketplace extends javax.swing.JFrame {
         initComponents();
     }
 
-    // public Marketplace(Void v) {
-    // // Null constructor
-    // }
-
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -195,14 +191,6 @@ public class Marketplace extends javax.swing.JFrame {
                 new Marketplace().setVisible(true);
             }
         });
-    }
-
-    public void setPanelContainer(javax.swing.JPanel panelContainer) {
-        this.panelContainer = panelContainer;
-    }
-
-    public javax.swing.JPanel getPanelContainer() {
-        return this.panelContainer;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
