@@ -15,7 +15,8 @@ public class Goods implements GoodsInterface {
     @SerializedName("goods_rating")
     private float goodsrating;
 
-    Goods(String goodsName, long goodsPrice, String sellerRegion, float goodsrating) {
+    public Goods(String goodsPicturePath, String goodsName, long goodsPrice, String sellerRegion, float goodsrating) {
+        this.goodsPicturePath = goodsPicturePath;
         this.goodsName = goodsName;
         this.goodsPrice = goodsPrice;
         this.sellerRegion = sellerRegion;
