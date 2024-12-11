@@ -4,6 +4,8 @@
  */
 package com.pbo.marketplace.ui.components;
 
+import com.pbo.marketplace.domain.actionlistener.AddToCartActionPerformed;
+
 /**
  *
  * @author rasyid-firmansyah
@@ -148,7 +150,9 @@ public class GoodsCard extends javax.swing.JPanel {
         }// </editor-fold>//GEN-END:initComponents
 
         private void addToCartActionPerformed(java.awt.event.ActionEvent evt) {// GEN-FIRST:event_addToCartActionPerformed
-                // TODO add your handling code here:
+                AddToCartActionPerformed actionPerformed = new AddToCartActionPerformed(goodsImage, goodsName,
+                                goodsPrice,
+                                sellerRegion, goodsRating, evt);
         }// GEN-LAST:event_addToCartActionPerformed
 
         // Variables declaration - do not modify//GEN-BEGIN:variables
