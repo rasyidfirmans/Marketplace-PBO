@@ -4,6 +4,7 @@
  */
 package com.pbo.marketplace.ui.sections;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import com.pbo.marketplace.domain.entities.Cart;
@@ -170,6 +171,10 @@ public class CartSection extends javax.swing.JPanel {
 
                 userCart = new DatabaseRetrieve().JSONParser(Cart.class,
                                 "src/main/java/com/pbo/marketplace/database/carts.json");
+
+                if (userCart == null) {
+                        userCart = new ArrayList<>();
+                }
 
                 for (Cart cart : userCart) {
                         if (cart.getEmail().equals("rasyidnf.id@gmail.com")) {
